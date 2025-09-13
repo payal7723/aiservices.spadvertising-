@@ -1,0 +1,261 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-section {
+  min-height: 80vh;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(-135deg, #00c2f3, #005eda); 
+  /* background-image: linear-gradient(to right top, #050215, #100b20, #16122b, #1e1637, #271942, #311b4c, #3b1d55, #471e5e, #551e67, #641e70, #741b78, #84167f); */
+  /* blue → violet → purple like screenshot */
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.pill-btn {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  margin-bottom: -20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 40px;
+}
+
+.pill-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.hero-title {
+  font-size: 70px;
+  /* font-weight: 800; */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  color: #8ae8ff; ;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #e5e7eb;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+/* Hero Buttons Styled Like Navbar Contact Button */
+.hero-buttons .btn {
+  background:white;          /* same as navbar contact */
+  color: black;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  /* border: 2px solid #0056b3; */
+  box-shadow: 5px 5px #000000;
+  transition: all 0.3s ease;
+}
+/* 
+.hero-buttons .btn:hover {
+  background: #0056b3;     
+  transform: scale(1.05);
+  box-shadow: 5px 5px #888888;
+} */
+
+/* Optional: if you want different style for "Learn More" button */
+.hero-buttons .btn.secondary {
+  background: white;
+  /* border: 2px solid #0046a1; */
+  box-shadow: 5px 5px #000000;
+}
+
+/* .hero-buttons .btn.secondary:hover {
+  background: #0046a1;
+  transform: scale(1.05);
+  box-shadow: 5px 5px #888888;
+} */
+
+@media (max-width:768px) {
+  .hero-title {
+    font-size: 50px;
+  }
+  
+}
+
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  /* margin-top: 20px; */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: white; /* transparent navbar */
+}
+
+.navbar-logo img {
+  height: 50px;       
+  width: auto;       
+  /* object-fit: contain; */
+  margin-left: 130px;         
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin-left: 200px;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.navbar-links li:last-child {
+  margin-left: 320px;
+  margin-right: 50px;
+  /* margin-top: 0 !important;  */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-size: 18px;
+  color:black;       /* white text for gradient bg */
+  font-weight: bold;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-links li a:hover {
+  color: #facc15;  /* hover yellow jaisa screenshot me hai */
+}
+
+/* Contact as a button (only desktop) */
+.navbar-links li .contact-btn {
+  background: #007bff;            
+  color: white !important;
+  padding: 10px 20px;           
+  border-radius: 12px;            
+  font-weight: 600;
+  transition: all 0.3s ease;
+  /* border: 2px solid #0056b3; */
+  box-shadow: 5px 5px #000000; 
+  margin-top: -20px; 
+}
+
+.navbar-links li .contact-btn:hover {
+  background: #0c6bd1;          
+  transform: scale(1.05);         
+  /* box-shadow: 5px 2px #888888; */
+}
+
+/* Hide icons on desktop */
+.mobile-icon {
+  display: none;
+  font-size: 16px;
+}
+
+/* ===== BURGER MENU ===== */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  margin: 3px 0;
+  border-radius: 2px;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-logo img {
+    height: 70px !important;   /* thoda chhota logo */
+    width: 180px !important;    /* aspect ratio maintain */
+    margin-left: -0px; /* shift hata diya */
+  }
+
+
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 999;
+    border-radius: 8px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+
+.navbar-links li .contact-btn {
+    background: white;
+    color: black !important;
+    border: none;
+    padding: 8px 0;
+    border-radius: 0;
+    font-weight: bold;
+    margin: 0; /* reset all margins */
+    box-shadow: none;
+    display: block; /* ensure it takes full width */
+  }
+
+  .navbar-links li:last-child {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -10px;
+  }
+
+
+  /* Show icons on mobile */
+  .mobile-icon {
+    display: inline-block;
+  }
+}
