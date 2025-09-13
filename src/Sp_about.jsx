@@ -6,7 +6,7 @@ export default function AboutAI() {
   return (
     <div className="about-ai-section">
       <div className="about-ai-image">
-        <img src="./aipic.png" alt="AI Illustration" />
+        <img src="./aipic1.png" alt="AI Illustration" />
       </div>
 
       <div className="about-ai-content">
