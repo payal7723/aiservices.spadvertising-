@@ -53,20 +53,6 @@ const services = [
     value: "Boosts relevance and retention.",
     icon: <img src="promo.jpg" />,
   },
-  // {
-  //   title: "Neuro-Marketing Insights",
-  //   description:
-  //     "AI analysis of eye-tracking, click heatmaps, and emotional response data.",
-  //   value: "Data-backed creative decisions.",
-  //   icon: <FaBrain />,
-  // },
-  // {
-  //   title: "AI-Driven Influencer Matching",
-  //   description:
-  //     "Algorithmic matching of brands with influencers based on audience overlap and engagement quality.",
-  //   value: "Better influencer ROI.",
-  //   icon: <FaHandshake />,
-  // },
 ];
 
 const Services = () => {
@@ -74,7 +60,7 @@ const Services = () => {
     <div className="services-main">
       <div className="services">
         <h2 className="services-title">
-          Our <span>AI-Powered Branding & Marketing</span> Services
+          Our <span>AI-Powered Branding & Marketing</span> Service
         </h2>
         <div className="services-slider">
   {services.map((service, index) => (
