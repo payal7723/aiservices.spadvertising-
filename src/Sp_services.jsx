@@ -15,43 +15,49 @@ const services = [
   {
     title: "AI Brand Identity Generator",
     description:
-      "AI-assisted creation of logo variations, color palettes, and typography suggestions based on brand personality inputs.",
-    value: "Faster, more tailored brand development.",
+      "Generate a unique brand identity with AI-powered logos, typography, color palettes, and design elements customized for your business. Enhance your visual presence with consistent, professional branding across all platforms.",
     icon: <img src="./788.jpg" />,
   },
   {
     title: "Predictive Campaign Analytics",
-    description: "AI models that forecast campaign performance before launch.",
-    value: "Reduces wasted ad spend, improves ROI.",
+    description: "Leverage AI-driven insights to predict campaign performance with accuracy. Optimize strategies, maximize ROI, and stay ahead of market trends.",
     icon: <img src="./analysis_pre.jpg" />,
   },
   {
     title: "Hyper-Personalized Ad Creatives",
     description:
-      "AI that generates multiple ad versions tailored to micro-audiences.",
-    value: "Higher engagement and conversion rates.",
+      "Craft AI-powered ad creatives tailored to each micro-audience segment. Boost engagement, conversions, and brand impact with hyper-personalized messaging.",
     icon: <img src="./5257.jpg" />,
   },
   {
     title: "AI-Powered Social Listening",
     description:
-      "Real-time monitoring of brand mentions, sentiment, and competitor activity.",
-    value: "Faster response to trends and crises.",
+      "Track conversations and trends with AI-powered social listening tools. Understand customer sentiment, gain competitor insights, and refine strategies in real time.",
     icon: <img src="aipic.jpg" />,
   },
   {
     title: "Content Automation Suite",
     description:
-      "AI-assisted blog writing, social captions, and email sequences aligned with brand tone.",
-    value: "Consistent, scalable content output.",
+      "Automate content creation, scheduling, and distribution with AI-powered tools. Includes AI-assisted blog writing, social captions, and email sequences aligned with your brand tone in real time.",
     icon: <img src="aicontent.jpg"/>,
   },
   {
     title: "Video Personalization ",
     description:
-      "AI-generated videos that adapt text, voiceover,visuals for each viewer segment.",
-    value: "Boosts relevance and retention.",
+      "AI-generated videos that adapt text, voiceover, and visuals for each viewer segment. Boost engagement, conversions, and loyalty with real-time personalized storytelling.",
     icon: <img src="promo.jpg" />,
+  },
+  {
+    title: "Neuro-Marketing Insights",
+    description:
+     "AI analysis of eye-tracking, heatmaps, and emotional responses. Unlock neuro-marketing insights to optimize campaigns and influence decisions.",
+    icon: <img src="neuro.jpg" />,
+  },
+  {
+    title: "AI-Driven Influencer Matching ",
+    description:
+     "Match with the right influencers using AI-driven audience and engagement analysis. Boost brand reach, trust, and conversions through precise collaborations.",
+    icon: <img src="influence.jpg" />,
   },
 ];
 
@@ -60,7 +66,7 @@ const Services = () => {
     <div className="services-main">
       <div className="services">
         <h2 className="services-title">
-          Our <span>AI-Powered Branding & Marketing</span> Service
+          Our <span>AI-Powered Branding & Marketing</span> Services
         </h2>
         <div className="services-slider">
   {services.map((service, index) => (

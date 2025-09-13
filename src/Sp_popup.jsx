@@ -9,14 +9,14 @@ const Popup = ({ onClose }) => {
   return (
     <div className="popup-overlay">
       <div className="popup-box animate-popup">
-        {/* LEFT SIDE */}
-        {/* LEFT SIDE */}
+        
         <div className="popup-left">
-          <h1>FREE AI BRAND AUDIT</h1>
-          <p>Uncover AI Opportunities for Your Branding and Marketing</p>
+          <div className="left-content">
+            <img src="/aitemp.jpg" alt="AI Icon" className="top-image" />
 
-          <div className="list-with-image">
-            <img src="/ml.png" alt="AI Icon" className="list-image" />
+            <h1>FREE AI BRAND AUDIT</h1>
+            <p>Uncover AI Opportunities for Your Branding and Marketing</p>
+
             <ul>
               <li>Evaluate your brand's AI-readiness</li>
               <li>Identify areas for AI-driven improvement</li>
@@ -24,8 +24,6 @@ const Popup = ({ onClose }) => {
               <li>Receive strategic recommendations for the AI era</li>
             </ul>
           </div>
-
-          {/* <button className="audit-btn">REQUEST YOUR AUDIT</button> */}
         </div>
 
         {/* RIGHT SIDE */}

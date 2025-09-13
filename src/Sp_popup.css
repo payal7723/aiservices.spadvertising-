@@ -47,17 +47,30 @@
   background: #0f223a;
   color: white;
   padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* sab center aligned */
 }
 
-.popup-left h3 {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  /* opacity: 0.8; */
+.left-content {
+  max-width: 300px; /* thoda fix width taaki clean lage */
+}
+
+.top-image {
+  width: 320px;
+  height: 200px;
+  margin: 0 auto 20px auto; /* center aur niche gap */
+  display: block;
+  border-radius: 20px;
+  padding: 10px;
+  border: 3px solid transparent;
+  /* border-image: linear-gradient(135deg, #00f, #0f9) 1; */
 }
 
 .popup-left h1 {
-  font-size: 2rem;
-  margin: 15px 0;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
 .popup-left p {
@@ -66,60 +79,15 @@
   opacity: 0.9;
 }
 
-.popup-left .sp{
-  font-weight: bold;
-  font-size: 30px;
-  color: white !important;
-  
-}
 .popup-left ul {
-  margin: 20px 0;
-  padding-left: 15px;
+  text-align: left; /* list ko left aligned rakhe */
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
 .popup-left li {
   margin-bottom: 10px;
 }
-/* Container for list and image */
-.list-with-image {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px; /* space between image and list */
-  margin: 20px 0;
-}
-
-/* Image on the left of list */
-.list-image {
-  width: 100px;
-  height: auto;
-  flex-shrink: 0;
-  border-radius: 20px;
-  padding: 20px;
-  border: 4px solid transparent; /* transparent border to apply gradient */
-  border-image: linear-gradient(135deg, #00f, #0f9) 1; /* blue → green gradient */
-}
-
-
-
-/* List */
-.list-with-image ul {
-  list-style: none; /* remove default bullets */
-  padding-left: 0;
-}
-
-.list-with-image li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 10px;
-}
-
-.list-with-image li::before {
-
-  position: absolute;
-  left: 0;
-  color: #1cc9c7; /* same as button color */
-}
-
 
 .audit-btn {
   background: #1cc9c7;
