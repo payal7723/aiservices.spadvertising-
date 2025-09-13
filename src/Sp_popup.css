@@ -46,7 +46,7 @@
   flex: 1;
   background: #0f223a;
   color: white;
-  padding: 40px 30px;
+  padding: 20px 10px 0px -10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,25 +63,28 @@
   margin: 0 auto 20px auto; /* center aur niche gap */
   display: block;
   border-radius: 20px;
-  padding: 10px;
+  /* padding: 10px; */
   border: 3px solid transparent;
   /* border-image: linear-gradient(135deg, #00f, #0f9) 1; */
 }
 
 .popup-left h1 {
   font-size: 1.8rem;
+  margin-left: -30px;
   margin-bottom: 10px;
 }
 
 .popup-left p {
   margin-bottom: 20px;
   font-size: 1rem;
+  margin-left: -30px;
   opacity: 0.9;
 }
 
 .popup-left ul {
-  text-align: left; /* list ko left aligned rakhe */
+  text-align: left; 
   margin-top: 20px;
+  margin-left: -20px;
   padding-left: 20px;
 }
 
