@@ -26,49 +26,51 @@ function Sp_ad() {
           display: block;
         }
       `}</style>
- 
+
       {/* Navbar */}
-      
 
       <Sp_popup message="Welcome to SP Advertising!" duration={0} />
       <Sp_nav />
-     
-     <div className="hero-section" id="home">
-      <div className="hero-content">
-  
-        <div className="pill-btn">Welcome to SP Advertising →</div>
 
-        <h1 className="hero-title">
-          Revolutionize Your <br /> Marketing with <span>AI Power</span>
-        </h1>
+      <div className="hero-section" id="home">
+        <div className="hero-content">
+          <div className="pill-btn">Welcome to SP Advertising →</div>
 
-       <p className="hero-subtitle">
-  Maximize ROI and unlock business potential with SP Advertising.  
-  Harness cutting-edge AI technology to create personalized campaigns that drive growth and lasting impact.
-</p>
+          <h1 className="hero-title">
+            Revolutionize Your <br /> Marketing with <span>AI Power</span>
+          </h1>
 
-        {/* Buttons */}
-        <div className="hero-buttons">
-          <button className="btn primary">Get Started</button>
-          <button className="btn secondary">Learn More</button>
+          <p className="hero-subtitle">
+            Maximize ROI and unlock business potential with SP Advertising.
+            Harness cutting-edge AI technology to create personalized campaigns
+            that drive growth and lasting impact.
+          </p>
+
+          {/* Buttons */}
+          <div className="hero-buttons">
+            <a href="#contact">
+              <button className="btn primary">Get Started</button>
+            </a>
+            <a href="https://wa.me/918085354646">
+              <button className="btn secondary">Know More</button>
+            </a>
+            
+          </div>
         </div>
       </div>
-    </div>
 
-     
       <div id="about">
         <Sp_about />
       </div>
-      
+
       <div id="services">
-        <Sp_services/>
+        <Sp_services />
       </div>
-    
+
       <div id="contact">
         <Sp_contact />
       </div>
 
-    
       <Sp_footer />
     </div>
   );
