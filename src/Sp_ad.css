@@ -1,107 +1,206 @@
+/* 🌐 Global */
 html {
   scroll-behavior: smooth;
 }
+body, .app-wrapper {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
 
+/* ---------------- Hero Section ---------------- */
 .hero-section {
-  min-height: 80vh;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
-  
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(-135deg, #00c2f3, #005eda); 
-  /* background-image: linear-gradient(to right top, #050215, #100b20, #16122b, #1e1637, #271942, #311b4c, #3b1d55, #471e5e, #551e67, #641e70, #741b78, #84167f); */
-  /* blue → violet → purple like screenshot */
+  position: relative;
+  padding: 80px 40px;
+  overflow: hidden;
   color: white;
-  padding: 40px 20px;
 }
 
-.hero-content {
-  max-width: 900px;
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/aiback6.jpg");
+  background-size: cover;
+  background-position: 10% 12%; 
+  filter: blur(3px)brightness(0.9);
+  z-index: -1;
 }
 
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+@keyframes slideInLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-left {
+  flex: 1;
+  text-align: left;
+  margin-top: 40px; /* top margin as you wanted */
+  animation: slideInLeft 1s ease-out forwards;
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Image on right */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-right: -50px;
+  animation: fadeInDown 1s ease-out, float 4s ease-in-out infinite 1s; 
+  /* pehle 1s fadeInDown chalega, phir 1s ke baad float start hoga */
+}
+
+/* Pill Button */
 .pill-btn {
   display: inline-block;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.4);
   padding: 8px 20px;
   border-radius: 9999px;
-  font-size: 0.9rem;
-  margin-bottom: -20px;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
   color: white;
   cursor: pointer;
   transition: 0.3s;
-  margin-top: 40px;
 }
 
-.pill-btn:hover {
-  background: rgba(255,255,255,0.2);
-}
-
+/* Hero Title */
 .hero-title {
-  font-size: 70px;
-  /* font-weight: 800; */
+  font-size: 64px;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
 .hero-title span {
-  color: #8ae8ff; ;
+  background: linear-gradient(90deg, #00f2ff, #0075ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00f2ff, 0 0 20px #0075ff; }
+  to { text-shadow: 0 0 20px #9d4edd, 0 0 40px #00f2ff; }
+}
+
+/* Hero Subtitle */
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #e5e7eb;
   margin-bottom: 30px;
   line-height: 1.6;
 }
 
-/* Buttons */
+/* Hero Buttons */
 .hero-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 15px;
   flex-wrap: wrap;
 }
-/* Hero Buttons Styled Like Navbar Contact Button */
+
 .hero-buttons .btn {
-  background:white;          /* same as navbar contact */
-  color: black;
   padding: 12px 28px;
   border-radius: 12px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  /* border: 2px solid #0056b3; */
-  box-shadow: 5px 5px #000000;
   transition: all 0.3s ease;
+  box-shadow: 5px 5px #000000;
 }
-/* 
-.hero-buttons .btn:hover {
-  background: #0056b3;     
-  transform: scale(1.05);
-  box-shadow: 5px 5px #888888;
-} */
 
-/* Optional: if you want different style for "Learn More" button */
+/* Primary Button */
+.hero-buttons .btn.primary {
+  background: linear-gradient(90deg, #005eda, #00c2f3);
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px #00c2f3, 0 0 30px #005eda;
+}
+.hero-buttons .btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f2ff, 0 0 50px #0075ff;
+}
+
+/* Secondary Button */
 .hero-buttons .btn.secondary {
   background: white;
-  /* border: 2px solid #0046a1; */
+  color: black;
+  border: 1px solid black;
   box-shadow: 5px 5px #000000;
 }
+.hero-buttons .btn.secondary:hover {
+  background: #005eda;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 7px 7px #000000;
+}
 
-/* .hero-buttons .btn.secondary:hover {
-  background: #0046a1;
-  transform: scale(1.05);
-  box-shadow: 5px 5px #888888;
-} */
+/* ---------------- Media Queries ---------------- */
+/* ≤1440px */
+@media (max-width: 1440px) {
+  .hero-title { font-size: 56px; }
+  .hero-subtitle { font-size: 1.2rem; }
+}
 
-@media (max-width:768px) {
-  .hero-title {
-    font-size: 50px;
+/* ≤1024px */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
   }
-  
+  .hero-left, .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-right img { margin-bottom: 20px; }
+  .hero-title { font-size: 48px; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .pill-btn { font-size: 0.9rem; padding: 6px 16px; }
+}
+
+/* ≤768px (Tablet) */
+@media (max-width: 768px) {
+  .hero-title { font-size: 42px; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-buttons .btn { padding: 10px 22px; font-size: 0.95rem; }
+}
+
+/* ≤500px (Mobile) */
+@media (max-width: 500px) {
+  .hero-title { font-size: 36px; }
+  .hero-subtitle { font-size: 0.95rem; line-height: 1.5; }
+  .pill-btn { font-size: 0.8rem; padding: 5px 12px; }
+  .hero-buttons { gap: 10px; justify-content: center; flex-direction: column; }
+  .hero-buttons .btn { width: 100%; max-width: 220px; }
 }
 
 
@@ -197,16 +296,69 @@ html {
   border-radius: 2px;
 }
 
-/* ===== MOBILE VIEW ===== */
-@media (max-width: 768px) {
+/* ===== LARGE DESKTOP (≤1440px) ===== */
+@media (max-width: 1440px) {
+  .navbar-logo img {
+    margin-left: 80px;   /* logo thoda andar */
+    height: 70px;        /* thoda chhota */
+  }
+
+  .navbar-links {
+    gap: 30px;           /* links gap kam */
+    margin-left: 120px;
+  }
+  .navbar-links li a{
+    font-size: 22px;
+  }
+
+  .navbar-links li:last-child {
+    margin-left: auto;   /* Contact button ko right side */
+    margin-right: 150px;
+    margin-top: 10px;
+  }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .navbar-logo img {
+    margin-left: 40px;   /* aur thoda andar */
+    height: 55px;
+    width: auto;
+  }
+
+  .navbar-links {
+    gap: 25px;
+    margin-left: 60px;
+  }
+
+  .navbar-links li a {
+    font-size: 16px;     /* text thoda chhota */
+  }
+
+  .navbar-links li:last-child {
+    margin-left: auto;
+    margin-right: 100px;
+    margin-top: 10px;
+  }
+
+  .navbar-links li .contact-btn {
+    padding: 8px 16px;   /* button chhota */
+    font-size: 15px;
+    border-radius: 10px;
+  }
+}
+
+
+/* ===== TABLET VIEW ===== */
+@media (max-width: 768px) and (min-width:600px) {
   .navbar {
-    padding: 8px 15px;
+    /* padding: 8px 15px; */
   }
 
   .navbar-logo img {
     height: 70px !important;   /* thoda chhota logo */
     width: 180px !important;    /* aspect ratio maintain */
-    margin-left: -0px; /* shift hata diya */
+    margin-right: 550px; /* shift hata diya */
   }
 
 
@@ -231,7 +383,136 @@ html {
 
   .navbar-toggle {
     display: flex;
-    margin-right: 50px;
+    /* margin-right: 70px; */
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 80px;
+  }
+
+.navbar-links li .contact-btn {
+    background: white;
+    color: black !important;
+    border: none;
+    padding: 8px 0;
+    border-radius: 0;
+    font-weight: bold;
+    margin: 0; /* reset all margins */
+    box-shadow: none;
+    display: block; /* ensure it takes full width */
+  }
+
+  .navbar-links li:last-child {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -10px;
+  }
+
+
+  /* Show icons on mobile */
+  .mobile-icon {
+    display: inline-block;
+  }
+}
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 500px)  and (min-width:360px){
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-logo img {
+    height: 70px !important;   /* thoda chhota logo */
+    width: 180px !important;    /* aspect ratio maintain */
+    margin-left: -40px; /* shift hata diya */
+    margin-right: 40px;
+  }
+
+
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 999;
+    border-radius: 8px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    margin-left: 110px;
+    margin-top: 10px;
+  }
+
+.navbar-links li .contact-btn {
+    background: white;
+    color: black !important;
+    border: none;
+    padding: 8px 0;
+    border-radius: 0;
+    font-weight: bold;
+    margin: 0; /* reset all margins */
+    box-shadow: none;
+    display: block; /* ensure it takes full width */
+  }
+
+  .navbar-links li:last-child {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -10px;
+  }
+
+
+  /* Show icons on mobile */
+  .mobile-icon {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 320px){
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-logo img {
+    height: 70px !important;   /* thoda chhota logo */
+    width: 150px !important;    /* aspect ratio maintain */
+    margin-left: -40px; /* shift hata diya */
+    margin-right: 80px;
+  }
+
+
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: white;
+    width: 200px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 999;
+    border-radius: 8px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    margin-right: 0px;
+    margin-left: 20px;
     margin-top: 10px;
   }
 

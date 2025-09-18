@@ -1,6 +1,7 @@
 import React from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import "./Sp_footer.css";
+import logo_footer from "https://res.cloudinary.com/dxzxvhrhy/image/upload/v1758024529/logo-footer_cphufe.png"
 
 function Sp_footer() {
   return (
@@ -8,7 +9,7 @@ function Sp_footer() {
       <div className="main_footer">
         <div className="footer1">
           <div className="f1">
-            <img src="./logo-footer.png" alt="SP Advertising Logo" />
+            <img src={logo_footer} alt="SP Advertising Logo" />
           </div>
           <p>
            SP Advertising is a 360-degree marketing and branding agency dedicated to delivering exceptional results. Our team of experts combines knowledge and passion to create impactful campaigns that drive business growth.

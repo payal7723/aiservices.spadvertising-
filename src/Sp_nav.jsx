@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Sp_ad.css";
 import "animate.css";
+
 import { FaHome, FaInfoCircle, FaCogs, FaPhone } from "react-icons/fa"; // Icons
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
       {/* Left Side - Logo */}
       <div className="animate__animated animate__fadeInLeft navbar-logo">
         <img
-          src="./logo14.png"
+          src={"https://res.cloudinary.com/dxzxvhrhy/image/upload/v1758024528/logo14_zd1rhw.webp"}
           alt="AI logo"
           style={{ width: "250px", height: "80px"}}
         />

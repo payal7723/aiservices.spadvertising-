@@ -12,7 +12,7 @@ const Popup = ({ onClose }) => {
         
         <div className="popup-left">
           <div className="left-content">
-            <img src="/aitemp.png" alt="AI Icon" className="top-image" />
+            <img src={"https://res.cloudinary.com/dxzxvhrhy/image/upload/v1758024528/aitemp_gowxrf.png"} alt="AI Icon" className="top-image" />
 
             <h1>FREE AI BRAND AUDIT</h1>
             <p>Uncover AI Opportunities for Your Branding and Marketing</p>

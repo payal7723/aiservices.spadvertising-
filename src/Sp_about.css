@@ -2,106 +2,179 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 10px;
-  background: #f9fafb;
+  padding: 60px 80px;
   gap: 40px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  margin-top: -20px;
 }
-.about-ai-image img {
-  max-width: 400px;
+
+/* Background Image */
+.about-ai-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  animation: float 3s ease-in-out infinite;
-  
+  height: 100%;
+  background: url("/aiback61.jpg") no-repeat;
+  background-size: cover;
+  background-position: 10% 62%; /* X% (horizontal), Y% (vertical) */
+  filter: blur(3px) brightness(0.9);
+  z-index: -1;
 }
 
+/* Headline Gradient Glow */
+.about-ai-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00f2ff, #0075ff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
-@keyframes float {
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #0075ff;
+  }
+  to {
+    text-shadow: 0 0 20px #9d4edd, 0 0 40px #00f2ff;
+  }
+}
+
+/* Slide-in animation ke liye */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-ai-content {
+  flex: 1 1 0;
+  animation: slideInRight 1s ease-out forwards;
+  margin-top: 30px;
+}
+
+.about-ai-content p {
+  font-size: 1rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.about-ai-closing {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.get-quote-btn12 {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(90deg, #005eda, #00c2f3);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #00c2f3, 0 0 30px #005eda;
+}
+
+.get-quote-btn12:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f2ff, 0 0 50px #0075ff;
+}
+
+/* Floating Image */
+.about-ai-image {
+  flex: 1 1 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.about-ai-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
 
 .about-ai-content {
-  max-width: 600px;
-  text-align: left;
+  flex: 1 1 0;
 }
 
-.about-ai-content h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #1f2937;
-  margin-bottom: 20px;
+/* ------------------ Responsive ------------------ */
+
+/* ≤1440px (Large laptops) */
+@media (max-width: 1440px) {
+  .about-ai-content h2 { font-size: 2.5rem; }
+  .about-ai-content p { font-size: 1.2rem; }
+  .about-ai-closing { font-size: 1rem; }
+  
 }
 
-.about-ai-content p {
-  font-size: 1.1rem;
-  color: #374151;
-  margin-bottom: 20px;
-  line-height: 1.6;
+/* ≤1024px (Tablets Landscape) */
+@media (max-width: 1024px) {
+  .about-ai-section { padding: 30px 60px; gap: 30px; }
+  .about-ai-content h2 { font-size: 1.8rem; }
+  .about-ai-content p { font-size: 0.9rem; }
+  .get-quote-btn12 { font-size: 0.95rem; padding: 8px 18px; }
 }
 
-.about-ai-content ul {
-  margin: 20px 0;
-  padding-left: 20px;
-}
-
-.about-ai-content ul li {
-  margin-bottom: 12px;
-  font-size: 1.05rem;
-  color: black;
-}
-
-.about-ai-closing {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 30px;
-  color: #111827;
-}
-
-.get-quote-btn {
-  display: inline-block;
-  background: #007bff;           /* same as navbar contact */
-  color: white;
-  padding: 12px 28px;            /* comfortable size */
-  border-radius: 12px;           /* rounded edges like navbar */
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: 2px solid #0056b3;    /* same border as navbar contact */
-  box-shadow: 5px 5px #000000;  /* shadow like navbar */
-  transition: all 0.3s ease;
-}
-
-.get-quote-btn:hover {
-  background: #288df9;           /* darker blue on hover */
-  transform: scale(1.05); 
-  color:white;       /* subtle pop effect */
-  box-shadow: 5px 5px #d7d7d7;  /* shadow effect on hover */
-}
-
-/* Responsive adjustments for small screens */
-@media (max-width: 768px) {
-  .get-quote-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-
+/* ≤768px (Tablets Portrait) */
 @media (max-width: 768px) {
   .about-ai-section {
     flex-direction: column;
     text-align: center;
+    padding: 20px 40px;
   }
-  .about-ai-content {
-    text-align: center;
-  }
-  .about-ai-content ul {
-    text-align: left;
-  }
-
-  .about-ai-image img{
-    height: 200px;
-  }
-
+  .about-ai-content h2 { font-size: 1.6rem; }
+  .about-ai-content p { font-size: 0.85rem; }
+  .about-ai-image img { height: 200px; margin: 0 auto; }
 }
+
+/* ≤500px (Small phones) */
+@media (max-width: 500px) {
+  .about-ai-section { padding: 15px 20px; gap: 20px; }
+  .about-ai-content h2 { font-size: 1.5rem; }
+  .about-ai-content p { font-size: 0.8rem; }
+  .get-quote-btn12 { font-size: 0.85rem; padding: 6px 14px; }
+  .about-ai-image img { height: 160px; } 
+}
+
+/* ≤375px (iPhone SE, small devices) */
+@media (max-width: 375px) and (min-width: 350px) {
+  .about-ai-section { gap: 15px; }
+  .about-ai-content h2 { font-size: 1.3rem; }
+  .about-ai-content p { font-size: 0.78rem; }
+  .about-ai-closing { font-size: 0.85rem; }
+  .get-quote-btn12 { font-size: 0.8rem; padding: 6px 12px; }
+  .about-ai-image img { height: 140px; margin: 0 auto; display: block; }
+}
+
+/* ≤320px (Extra small phones) */
+/* @media (max-width: 340px) {
+  .about-ai-section { gap: 10px; padding: 10px 15px; }
+  .about-ai-content h2 { font-size: 1.1rem; margin: 0 2px; }
+  .about-ai-content p { font-size: 0.7rem; margin: 0 5px; }
+  .about-ai-closing { font-size: 0.75rem; }
+  .get-quote-btn12 { font-size: 0.75rem; padding: 0px 10px; height: 50px !important; }
+  .about-ai-image img { height: 120px; }
+} */
